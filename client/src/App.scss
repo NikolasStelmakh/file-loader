@@ -1,0 +1,149 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-float infinite 3s ease-in-out;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: rgb(112, 76, 182);
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+.header {
+  height: 64px;
+  width: 100%;
+  border-radius: 0;
+  padding: 16px 120px 16px 120px;
+  border-bottom: 1px solid #233251;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 28px;
+    //width: 28px;
+    left: 0;
+    top: 0;
+    border-radius: 0;
+  }
+}
+
+.main-container {
+  margin: 32px;
+
+  .navigation {
+    margin-bottom: 8px;
+  }
+}
+
+.file-loader {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+
+  //position: absolute;
+  width: 848px;
+  height: 580px;
+  //left: 32px;
+  //top: 136px;
+
+  /* Surfase/Dark/S1 */
+
+  background: #192337;
+  border-radius: 8px;
+
+  .title {
+    width: 784px;
+    height: 24px;
+
+    /* Title/Large */
+
+    //font-family: 'Aeonik Fono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 24px;
+    /* identical to box height, or 109% */
+
+    text-align: center;
+
+    /* Typography/On Surface Dark/Primary */
+
+    color: #CED9E9;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .info {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 6px 16px;
+    gap: 8px;
+
+    height: 16px;
+
+    /* Secondary/200 */
+
+    background: #DCCAFF;
+    border-radius: 0px 0px 8px 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+
+    color: #513985;
+    font-size: 12px;
+
+    img {
+      height: 15px;
+      width: 15px;
+    }
+  }
+}
