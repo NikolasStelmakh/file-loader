@@ -87,6 +87,16 @@
   background: #192337;
   border-radius: 8px;
 
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+
+    .load-button {
+      cursor: pointer;
+      color: red;
+    }
+  }
+
   .title {
     width: 784px;
     height: 24px;

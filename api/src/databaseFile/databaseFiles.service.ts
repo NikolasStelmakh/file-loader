@@ -16,7 +16,7 @@ class DatabaseFilesService {
       data: dataBuffer,
     });
     await this.databaseFilesRepository.save(newFile);
-    return newFile;
+    return newFile.id;
   }
 
   async getFileById(fileId: number) {

@@ -25,12 +25,27 @@ export default function FileInput() {
 
     setFile(fileToSend);
 
+    const body = new FormData();
+    body.append('file', fileToSend);
+
     fetch(`${process.env.REACT_APP_API_ADDRESS}file`, {
       method: 'POST',
-      body: fileToSend,
+      body: body,
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.error(err));
+  };
+
+  const handleUploadFromURL = () => {
+    fetch(`${process.env.REACT_APP_API_ADDRESS}file/external`, {
+      method: 'POST',
+      body: JSON.stringify({
+        fileUrl:
+          'https://mercury.bid.cars/1-44641480/1966-Cadillac-Fleetwood-NNNN-1.jpg',
+      }),
       headers: {
-        'content-type': fileToSend.type,
-        'content-length': `${fileToSend.size}`,
+        'Content-Type': 'application/json',
       },
     })
       .then((res) => res.json())
@@ -42,9 +57,15 @@ export default function FileInput() {
     <div>
       <div className="title">Document Uploader</div>
 
-      <button onClick={handleUploadClick}>
-        {file ? `${file.name}` : 'Upload from File'}
-      </button>
+      <div className="buttons-container">
+        <div className="load-button" onClick={handleUploadClick}>
+          {file ? `${file.name}` : 'Upload from File'}
+        </div>
+
+        <div className="load-button" onClick={handleUploadFromURL}>
+          Upload from URL
+        </div>
+      </div>
 
       <input
         type="file"
