@@ -8,6 +8,17 @@ services:
     ports:
       - 3010:3010
 
+  api:
+    container_name: test-server
+    build: api/
+    command: npm run start:dev
+    depends_on:
+      - postgres
+    ports:
+      - 3000:3000
+    environment:
+      - POSTGRES_HOST=test-postgres
+
   postgres:
     container_name: test-postgres
     image: postgres:14.1-alpine
@@ -18,12 +29,3 @@ services:
       POSTGRES_PASSWORD: ab1f6hh942sm
       POSTGRES_USER: johny_cage
       POSTGRES_DB: test_db
-
-#  server:
-#    container_name: test-server
-#    build: api/
-#    command: npm run start:dev
-#    depends_on:
-#      - postgres
-#    ports:
-#      - 3000:3000

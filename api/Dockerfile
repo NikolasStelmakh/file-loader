@@ -7,7 +7,7 @@ RUN npm i
 
 COPY . .
 
-RUN ls
+#RUN ls
 
 EXPOSE 3000
 CMD ["npm", "run", "start:dev"]
