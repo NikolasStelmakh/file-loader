@@ -5,7 +5,7 @@ import FileInput from '../../../components/FileInput';
 export default function Main() {
   return (
     <div className="main-container">
-      <div>
+      <div className="actions-container">
         <div className="navigation">
           <ButtonGroup
             disableElevation
@@ -20,20 +20,23 @@ export default function Main() {
 
         <div className="file-loader">
           <FileInput />
-
           <div className="info">
             <img src={'info-icon.png'} /> File type: pdf, word, txt (20MB max)
           </div>
         </div>
       </div>
 
-      <div>
-        Contrary to popular belief, Lorem Ipsum is not simply random text.
-      </div>
-      <div>
-        It has roots in a piece of classical Latin literature from 45 BC, making
-        it over 2000 years old. Richard McClintock, a Latin professor at
-        Hampden-Sydney.
+      <div className="random-text-container">
+        <div>
+          <div className="title">
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+          </div>
+          <div className="text">
+            It has roots in a piece of classical Latin literature from 45 BC,
+            making it over 2000 years old. Richard McClintock, a Latin professor
+            at Hampden-Sydney.
+          </div>
+        </div>
       </div>
     </div>
   );

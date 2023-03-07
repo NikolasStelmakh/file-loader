@@ -59,11 +59,21 @@ export default function FileInput() {
 
       <div className="buttons-container">
         <div className="load-button" onClick={handleUploadClick}>
-          {file ? `${file.name}` : 'Upload from File'}
+          <div>
+            <div className="icon-container">
+              <img src={'file-icon.png'} />
+            </div>
+            <div>{file ? `${file.name}` : 'Upload from File'}</div>
+          </div>
         </div>
 
         <div className="load-button" onClick={handleUploadFromURL}>
-          Upload from URL
+          <div>
+            <div className="icon-container">
+              <img src={'link-icon.png'} />
+            </div>
+            <div>Upload from URL</div>
+          </div>
         </div>
       </div>
 

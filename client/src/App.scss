@@ -41,7 +41,7 @@
 
 .header {
   height: 64px;
-  width: 100%;
+  width: calc(100% - 240px);
   border-radius: 0;
   padding: 16px 120px 16px 120px;
   border-bottom: 1px solid #233251;
@@ -61,19 +61,46 @@
 
 .main-container {
   margin: 32px;
+  display: flex;
+  justify-content: space-between;
 
-  .navigation {
-    margin-bottom: 8px;
+  .actions-container {
+    width: calc((100% / 3) * 2);
+    .navigation {
+      margin-bottom: 8px;
+    }
+  }
+
+  .random-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+
+    .title {
+      font-size: 32px;
+      font-weight: bold;
+      background: linear-gradient(255.02deg, #FFEE9E 0%, #FE85A6 50.52%, #AE8DF5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .text {
+      font-size: 16px;
+    }
   }
 }
 
 .file-loader {
+  position: relative;
+  top: 0;
   /* Auto layout */
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   gap: 16px;
 
   //position: absolute;
@@ -92,14 +119,33 @@
     justify-content: space-between;
 
     .load-button {
+      background-color: #232F48;
+      width: calc(100% / 2 - 4px);
+      height: 344px;
       cursor: pointer;
-      color: red;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
     }
   }
 
   .title {
     width: 784px;
     height: 24px;
+    margin-top: calc(100% / 10);
+    margin-bottom: 24px;
 
     /* Title/Large */
 
@@ -126,15 +172,18 @@
   }
 
   .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 32px);
+    height: 16px;
+    padding: 6px 16px;
     /* Auto layout */
 
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 6px 16px;
     gap: 8px;
-
-    height: 16px;
 
     /* Secondary/200 */
 
